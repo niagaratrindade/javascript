@@ -12,8 +12,8 @@ class NegociacaoController {
         this._negociacoesView.update(this._listaNegociacoes);
 
         this._mensagem = new Mensagem();
-        this.mensagemView = new MensagemView($('#vistaMensagem'));
-        this.mensagemView.update(this._mensagem);
+        this._mensagemView = new MensagemView($('#vistaMensagem'));
+        this._mensagemView.update(this._mensagem);
     }
     
     adiciona(event) {
@@ -23,7 +23,7 @@ class NegociacaoController {
         this._negociacoesView.update(this._listaNegociacoes);
 
         this._mensagem.texto = 'Negociação adicionada com sucesso';
-        this.mensagemView.update(this._mensagem);
+        this._mensagemView.update(this._mensagem);
 
         this._limpaFormulario();
 
@@ -43,5 +43,13 @@ class NegociacaoController {
         this._inputValor.value = 0.0;
 
         this._inputData.focus();
+    }
+
+    apaga(){
+        this._listaNegociacoes.esvazia();
+        this._negociacoesView.update(this._listaNegociacoes);
+
+        this._mensagem.texto = "Negociações apagadas com sucesso";
+        this._mensagemView.update(this._mensagem);
     }
 }

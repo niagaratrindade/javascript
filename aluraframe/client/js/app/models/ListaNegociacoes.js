@@ -13,6 +13,6 @@ class ListaNegociacoes{
     }
 
     esvazia() {
-        this.negociacoes = [];
+        this._negociacoes = [];
     }
 }
